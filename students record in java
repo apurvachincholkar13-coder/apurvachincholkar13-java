@@ -1,0 +1,53 @@
+package myprojects;//write a java program to calculate students total marks ,percentage 
+import java.util.Scanner;
+public class abc {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    Scanner sc=new Scanner(System.in);
+
+    System.out.println("Enter your name: ");
+    String name=sc.next();
+
+    System.out.println("Enter roll no.= ");
+    int roll=sc.nextInt();
+
+    System.out.println("enter no. of sub= ");
+    int num=sc.nextInt();
+
+    int []marks=new int[num];
+    for(int i=0;i<num;i++) {
+    	marks[i]=sc.nextInt();
+    }
+    System.out.println("Marks are: ");
+  
+    for(int i=0;i<num;i++) {
+    	System.out.println(marks[i]+" ");
+    }
+    
+    int total=0;
+    for(int i=0;i<num;i++) {
+    	total=total+marks[i];
+    }
+    System.out.println("Total marks: "+total);
+    
+    
+    float per=total/num;
+    System.out.println("Percentage: "+per+"%");
+
+    if(per>80) {
+    	System.out.println("Grade A");
+    }
+    else if(per>60) {
+    	System.out.println("Grade B");
+    }
+    
+    else if(per>35) {
+    	System.out.println("Grade C");
+    }
+    else {
+    	System.out.println("Fail");
+    }
+	}
+
+}
