@@ -1,0 +1,54 @@
+package Assignment5;
+
+class SharedResource{
+synchronized void printNumbers(String threadname) {
+	
+	for(int i=1;i<5;i++){
+		System.out.println(threadname+":"+i);
+		 try {
+             Thread.sleep(500);
+         } catch (InterruptedException e) {
+             System.out.println(e);
+         }
+	}
+	System.out.println();
+}
+}
+class threadclassDemo extends Thread{
+	SharedResource resource;
+	
+	threadclassDemo(SharedResource resource){
+		this.resource=resource;
+	}
+	public void run() {
+		resource.printNumbers("Thread class");
+	}
+}
+
+
+class Runnabledemo implements Runnable{
+	SharedResource resource;
+	
+	
+Runnabledemo(SharedResource resource){
+	this.resource=resource;
+}
+public void run() {
+	resource.printNumbers("Runnable Interface");
+}
+}
+
+
+public class total{
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   SharedResource resource =new SharedResource();
+   threadclassDemo t1 =new threadclassDemo(resource);
+Runnabledemo obj =new Runnabledemo(resource);
+Thread t2=new Thread(obj);
+t1.start();
+t2.start();
+	}
+
+}
