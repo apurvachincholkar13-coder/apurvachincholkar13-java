@@ -1,0 +1,33 @@
+package Assignment;
+
+class Animal{
+	void sound(){
+		System.out.println("Animals Sound:");
+	}
+}
+class dog extends Animal{
+	void sound(){
+		System.out.println("Dogs barks");
+	}
+}
+class cat extends Animal{
+	void sound(){
+		System.out.println("Cat meows");
+	}
+}
+
+
+public class runtime {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Animal obj;
+     obj = new Animal();
+     obj.sound();
+     obj = new dog();
+     obj.sound();
+     obj = new cat();
+     obj.sound();
+	}
+
+}
