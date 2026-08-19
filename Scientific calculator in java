@@ -1,0 +1,45 @@
+package Assignment;
+
+class Calculator{
+	void add(int a,int b) {
+		System.out.println("Add: "+a+b);
+	}
+	
+	void add(int a,int b,int c) {
+		System.out.println("Add: "+a+b+c);
+	}
+	
+	void add(double s,double v) {
+		System.out.println("Add: "+s+v);
+	}
+	
+   void showType() {
+   }
+	
+};
+class scientificCalculator extends Calculator{
+	
+	void showType() {
+		System.out.println("Scientific Calculator");
+	}
+	
+	void power(int w,int e) {
+		System.out.println("Power is: "+ Math.pow(w,e));
+		
+	}
+};
+
+public class total {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+    scientificCalculator c;
+    c = new scientificCalculator();
+    c.showType();
+    c.add(2, 54);
+    c.add(23, 223,333);
+    c.add(20.3,43.5);
+    c.power(2,3);
+	}
+
+}
