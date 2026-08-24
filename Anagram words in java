@@ -1,0 +1,59 @@
+package Assignment;
+
+import java.util.*;
+
+public class ass7{
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first word: ");
+        String word1 = sc.nextLine();
+
+        System.out.print("Enter second word: ");
+        String word2 = sc.nextLine();
+
+        // Remove spaces and convert to lowercase
+        word1 = word1.replaceAll("\\s+", "").toLowerCase();
+        word2 = word2.replaceAll("\\s+", "").toLowerCase();
+
+        // Check anagrams
+        char[] arr1 = word1.toCharArray();
+        char[] arr2 = word2.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        if (Arrays.equals(arr1, arr2)) {
+            System.out.println("The words are Anagrams");
+        } else {
+            System.out.println("The words are Not Anagrams");
+        }
+
+        // Find unique characters
+        System.out.print("Unique characters in first word: ");
+        printUniqueCharacters(word1);
+
+        System.out.print("Unique characters in second word: ");
+        printUniqueCharacters(word2);
+
+        sc.close();
+    }
+
+    // Method to display unique characters
+    static void printUniqueCharacters(String word) {
+
+        LinkedHashSet<Character> set = new LinkedHashSet<>();
+
+        for (char ch : word.toCharArray()) {
+            set.add(ch);
+        }
+
+        for (char ch : set) {
+            System.out.print(ch + " ");
+        }
+
+        System.out.println();
+    }
+}
